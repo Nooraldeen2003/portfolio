@@ -1,0 +1,10 @@
+# Local source assets (optimized public copies live under assets/)
+DSC00586.jpg
+Microsoft Certificate.pdf
+NOORALDEEN_ALNASARAT_CV55.pdf
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
