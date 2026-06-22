@@ -27,6 +27,7 @@
   const closeMenu = () => {
     menu?.classList.remove("open");
     menuButton?.classList.remove("open");
+    body.classList.remove("menu-open");
     menuButton?.setAttribute("aria-expanded", "false");
     menuButton?.setAttribute("aria-label", "Open navigation");
   };
@@ -34,6 +35,7 @@
   menuButton?.addEventListener("click", () => {
     const isOpen = menu?.classList.toggle("open");
     menuButton.classList.toggle("open", isOpen);
+    body.classList.toggle("menu-open", isOpen);
     menuButton.setAttribute("aria-expanded", String(isOpen));
     menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   });
