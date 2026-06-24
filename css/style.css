@@ -492,3 +492,70 @@ body.is-leaving .page-curtain { opacity: 1; pointer-events: auto; }
   .universe-shell { display:flex; height:auto; min-height:0; padding:24px 18px 125px; flex-wrap:wrap; align-content:flex-start; gap:8px; }
   .skill-node { position:static; transform:none!important; opacity:1!important; }
 }
+
+/* Direct page introductions and CV-aligned skills */
+.simple-page-header { position:relative; z-index:3; max-width:920px; padding-top:125px; padding-bottom:30px; }
+.simple-page-header h1 { margin:10px 0 14px; color:var(--text); font-size:clamp(2.35rem,5vw,4rem); line-height:1.05; letter-spacing:-.055em; }
+.simple-page-header > p:last-child { max-width:720px; margin:0; color:var(--text-muted); font-size:.95rem; line-height:1.75; }
+.about-layout-compact { padding-top:38px; }
+.skills-section { scroll-margin-top:88px; }
+
+.skills-gateway { position:relative; display:grid; grid-template-columns:1.15fr .85fr; min-height:300px; align-items:center; gap:45px; padding:48px 52px; overflow:hidden; border:1px solid rgba(96,165,250,.18); border-radius:22px; color:inherit; background:linear-gradient(135deg,rgba(13,32,54,.92),rgba(4,14,27,.94)); box-shadow:0 30px 80px rgba(0,0,0,.24); transition:transform .4s var(--ease-out-expo),border-color .3s ease,box-shadow .3s ease; }
+.skills-gateway::before { content:""; position:absolute; inset:auto -90px -130px auto; width:360px; height:360px; border-radius:50%; background:radial-gradient(circle,rgba(37,99,235,.22),transparent 68%); }
+.skills-gateway:hover { transform:translateY(-6px); border-color:rgba(56,189,248,.4); box-shadow:0 38px 95px rgba(0,0,0,.3),0 0 45px rgba(37,99,235,.1); }
+.skills-gateway-copy { position:relative; z-index:2; }
+.skills-gateway h2 { margin:8px 0 12px; font-size:clamp(2rem,4vw,3.25rem); letter-spacing:-.045em; }
+.skills-gateway-copy > p:not(.kicker) { max-width:570px; color:var(--text-muted); line-height:1.75; }
+.gateway-action { display:inline-flex; align-items:center; gap:10px; margin-top:23px; color:#bceaff; font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+.gateway-action i { color:var(--accent-cyan); font-size:1.1rem; font-style:normal; transition:transform .25s ease; }
+.skills-gateway:hover .gateway-action i { transform:translateX(6px); }
+.gateway-logos { position:relative; z-index:2; display:grid; grid-template-columns:repeat(2,90px); justify-content:center; gap:14px; }
+.gateway-logos i { display:grid; width:90px; height:90px; place-items:center; padding:22px; border:1px solid rgba(96,165,250,.18); border-radius:22px; color:#6ec5ff; background:rgba(5,18,34,.82); box-shadow:0 18px 35px rgba(0,0,0,.22); font-style:normal; }
+.gateway-logos svg { width:100%; height:100%; fill:currentColor; }
+
+.skills-section .skill-field { height:930px; }
+.skills-section .skill-category-label[data-category-label="languages"] { top:53px; }
+.skills-section .skill-category-label[data-category-label="backend"] { top:193px; }
+.skills-section .skill-category-label[data-category-label="databases"] { top:333px; }
+.skills-section .skill-category-label[data-category-label="tools"] { top:473px; }
+.skills-section .skill-category-label[data-category-label="productivity"] { top:613px; }
+.skills-section .skill-category-label[data-category-label="other"] { top:753px; }
+.skill-orb[data-tech-icon="csharp"],.skill-orb[data-tech-icon="dotnet"],.skill-orb[data-tech-icon="efcore"],.skill-orb[data-tech-icon="visualstudio"] { color:#9b7cff; }
+.skill-orb[data-tech-icon="cpp"],.skill-orb[data-tech-icon="css"],.skill-orb[data-tech-icon="vscode"] { color:#4aa7ff; }
+.skill-orb[data-tech-icon="html"],.skill-orb[data-tech-icon="git"],.skill-orb[data-tech-icon="office"] { color:#f2764b; }
+.skill-orb[data-tech-icon="sqlserver"],.skill-orb[data-tech-icon="ssms"] { color:#ef6b6b; }
+.skill-orb[data-tech-icon="googleworkspace"] { color:#65a6ff; }
+.skill-orb[data-tech-icon="github"] { color:#eef4fb; }
+
+.projects-list:has(.project-card:only-child) { padding-top:40px; }
+.projects-list .project-card:only-child { margin-bottom:15px; }
+.certificate-grid:has(.certificate-card:only-child) { max-width:760px; margin-inline:auto; padding-top:40px; grid-template-columns:1fr; }
+.contact-simple-header { padding-bottom:55px; text-align:left; }
+.contact-simple-header .availability { margin:0 0 24px; }
+.contact-simple-header .email-display { margin:30px 0 0; }
+
+@media (max-width:720px) {
+  .simple-page-header { padding-top:72px; padding-bottom:18px; }
+  .simple-page-header h1 { font-size:clamp(2.05rem,10vw,2.7rem); }
+  .simple-page-header > p:last-child { font-size:.84rem; }
+  .about-layout-compact { padding-top:25px; }
+  .skills-gateway { grid-template-columns:1fr; min-height:0; gap:30px; padding:32px 24px; }
+  .gateway-logos { grid-template-columns:repeat(4,1fr); gap:8px; }
+  .gateway-logos i { width:100%; height:auto; aspect-ratio:1; padding:15px; border-radius:16px; }
+  .skills-section .skill-field { height:1010px; }
+  .skills-section .skill-category-label { left:16px; }
+  .skills-section .skill-category-label[data-category-label="languages"] { top:37px; }
+  .skills-section .skill-category-label[data-category-label="backend"] { top:195px; }
+  .skills-section .skill-category-label[data-category-label="databases"] { top:335px; }
+  .skills-section .skill-category-label[data-category-label="tools"] { top:480px; }
+  .skills-section .skill-category-label[data-category-label="productivity"] { top:650px; }
+  .skills-section .skill-category-label[data-category-label="other"] { top:795px; }
+  .contact-simple-header { padding-bottom:35px; }
+  .contact-simple-header .email-display { width:100%; align-items:flex-start; }
+  .contact-simple-header .email-display span { overflow-wrap:anywhere; }
+}
+
+@media (max-width:380px) {
+  .skills-section .skill-field { height:1035px; }
+  .gateway-logos i { padding:12px; }
+}

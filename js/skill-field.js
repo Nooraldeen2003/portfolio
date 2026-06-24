@@ -5,7 +5,7 @@
   if (!field) return;
 
   const nodes = [...field.querySelectorAll(".skill-orb")];
-  const categories = ["backend", "data", "engineering"];
+  const categories = ["languages", "backend", "databases", "tools", "productivity", "other"];
   const finePointer = window.matchMedia("(pointer: fine)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let width = 0;
@@ -29,14 +29,16 @@
     const group = states.filter((item) => item.category === state.category);
     const index = group.indexOf(state);
     const mobile = window.innerWidth <= 720;
-    if (mobile && state.category === "backend") {
-      return { x: width * (index % 2 === 0 ? .3 : .7), y: 125 + Math.floor(index / 2) * 92 };
+    if (mobile) {
+      const rows = [92, 250, 390, 535, 705, 850];
+      const columns = Math.min(3, group.length);
+      return {
+        x: width * ((index % columns) + 1) / (columns + 1),
+        y: rows[categoryIndex] + Math.floor(index / columns) * 82
+      };
     }
-    if (mobile && state.category === "engineering") {
-      return { x: width * (index % 2 === 0 ? .3 : .7), y: 535 + Math.floor(index / 2) * 92 };
-    }
-    const rows = mobile ? [135, 355, 555] : [145, 335, 520];
-    const padding = mobile ? 42 : Math.max(145, width * 0.14);
+    const rows = [105, 245, 385, 525, 665, 805];
+    const padding = Math.max(125, width * 0.12);
     const available = width - padding * 2;
     return {
       x: group.length === 1 ? width / 2 : padding + available * index / (group.length - 1),
