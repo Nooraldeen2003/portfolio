@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <script src="js/main.js?v=4" defer></script>
+  <script src="js/skill-field.js?v=4" defer></script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,10 +32,9 @@
   <main id="main">
     <section class="hero container">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span> Software Engineering Graduate <span class="eyebrow-divider"></span> Backend Developer</div>
-        <h1>Building the systems<br><span>behind great products.</span></h1>
-        <p class="hero-name">I’m <strong>Nooraldeen Alnasarat.</strong></p>
-        <p class="hero-intro">Focused on backend development, databases, and RESTful APIs, with practical academic experience turning structured ideas into reliable software systems.</p>
+        <div class="eyebrow"><span class="status-dot"></span> Software Engineer <span class="eyebrow-divider"></span> Backend Developer</div>
+        <h1 class="identity-heading">Nooraldeen<br><span>Alnasarat.</span></h1>
+        <p class="hero-intro">Software engineer and backend developer focused on building RESTful APIs and database-driven applications using C#, ASP.NET Core, and SQL Server.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="projects.html">Explore my work <span aria-hidden="true">→</span></a>
           <a class="button button-secondary" href="assets/docs/Nooraldeen_Alnasarat_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
@@ -60,54 +60,48 @@
       </div>
     </section>
 
-    <section class="tech-strip" aria-label="Core technologies">
-      <div class="container tech-list">
-        <span>CORE STACK</span><i></i><strong>ASP.NET Core</strong><i></i><strong>RESTful APIs</strong><i></i><strong>SQL Server</strong><i></i><strong>Entity Framework Core</strong><i></i><strong>Database Design</strong>
-      </div>
-    </section>
-
-    <section class="section universe-section container" aria-labelledby="universe-title">
-      <div class="section-heading reveal">
-        <div><p class="kicker">INTERACTIVE TECHNICAL UNIVERSE</p><h2 id="universe-title">Explore the systems I build with.</h2></div>
-        <p>Move through the constellation. Select a technology to reveal the tools and engineering ideas connected to it.</p>
-      </div>
-      <div class="universe-shell reveal" data-constellation>
-        <canvas class="constellation-canvas" aria-hidden="true"></canvas>
-        <div class="universe-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="universe-core" aria-hidden="true"><span>TECHNICAL</span><strong>UNIVERSE</strong><small>SELECT A NODE</small></div>
-        <button class="skill-node skill-node-primary" type="button" data-skill="ASP.NET Core" data-description="Structured backend foundations and Web API development." data-related="C#,RESTful APIs,Entity Framework Core,Backend Development">ASP.NET Core</button>
-        <button class="skill-node" type="button" data-skill="C#" data-description="The primary language behind my .NET backend work." data-related="ASP.NET Core,Backend Development,Entity Framework Core">C#</button>
-        <button class="skill-node" type="button" data-skill="RESTful APIs" data-description="Clear endpoints and dependable data flow between systems." data-related="ASP.NET Core,API Integration,Backend Development">RESTful APIs</button>
-        <button class="skill-node" type="button" data-skill="SQL Server" data-description="Relational data storage, querying, and application support." data-related="Database Design,Entity Framework Core,Backend Development">SQL Server</button>
-        <button class="skill-node" type="button" data-skill="Entity Framework Core" data-description="Practical data access and relational mapping in .NET." data-related="C#,ASP.NET Core,SQL Server,Database Design">Entity Framework Core</button>
-        <button class="skill-node" type="button" data-skill="Database Design" data-description="Structured relational models designed for clarity and consistency." data-related="SQL Server,Entity Framework Core,System Analysis">Database Design</button>
-        <button class="skill-node" type="button" data-skill="Backend Development" data-description="The logic, structure, and services behind useful digital products." data-related="C#,ASP.NET Core,RESTful APIs,Database Design">Backend Development</button>
-        <button class="skill-node" type="button" data-skill="API Integration" data-description="Connecting application interfaces to reliable backend services." data-related="RESTful APIs,ASP.NET Core,Flutter Integration">API Integration</button>
-        <button class="skill-node" type="button" data-skill="System Analysis" data-description="Clarifying requirements, flows, and technical direction before implementation." data-related="Database Design,Technical Documentation,Digital Products">System Analysis</button>
-        <button class="skill-node" type="button" data-skill="Git & GitHub" data-description="Version control and organized project collaboration." data-related="Technical Documentation,Software Engineering">Git & GitHub</button>
-        <button class="skill-node" type="button" data-skill="Technical Documentation" data-description="Making software decisions, plans, and system behavior understandable." data-related="System Analysis,Software Engineering,Git & GitHub">Technical Documentation</button>
-        <button class="skill-node" type="button" data-skill="Digital Products" data-description="Connecting technical systems to real user and product needs." data-related="System Analysis,Backend Development,Software Engineering">Digital Products</button>
-        <button class="skill-node" type="button" data-skill="Flutter Integration" data-description="Connecting Flutter application screens with backend APIs." data-related="API Integration,RESTful APIs,Digital Products">Flutter Integration</button>
-        <button class="skill-node" type="button" data-skill="Software Engineering" data-description="A disciplined foundation for building, documenting, and improving software." data-related="System Analysis,Technical Documentation,Backend Development">Software Engineering</button>
-        <div class="skill-readout" aria-live="polite">
-          <span class="skill-readout-index">SYS / 01</span>
-          <div><small>ACTIVE TECHNOLOGY</small><strong data-skill-title>ASP.NET Core</strong><p data-skill-description>Structured backend foundations and Web API development.</p></div>
-          <i class="skill-readout-signal" aria-hidden="true"></i>
+    <section class="core-stack" aria-labelledby="core-stack-title">
+      <div class="container">
+        <div class="core-stack-heading"><span>CORE STACK</span><p id="core-stack-title">Technologies I use for backend and database development.</p></div>
+        <div class="core-stack-grid">
+          <div class="core-tech"><i class="tech-logo" data-tech-icon="dotnet" aria-hidden="true"></i><strong>ASP.NET Core</strong></div>
+          <div class="core-tech"><i class="tech-logo" data-tech-icon="rest" aria-hidden="true"></i><strong>RESTful APIs</strong></div>
+          <div class="core-tech"><i class="tech-logo" data-tech-icon="sqlserver" aria-hidden="true"></i><strong>SQL Server</strong></div>
+          <div class="core-tech"><i class="tech-logo" data-tech-icon="efcore" aria-hidden="true"></i><strong>Entity Framework Core</strong></div>
+          <div class="core-tech"><i class="tech-logo" data-tech-icon="database" aria-hidden="true"></i><strong>Database Design</strong></div>
         </div>
       </div>
-      <p class="universe-hint reveal"><span aria-hidden="true">✦</span> Move your pointer through the field or select a node to map related technologies.</p>
     </section>
 
-    <section class="section container">
+    <section class="section universe-section container" aria-labelledby="skills-title">
       <div class="section-heading reveal">
-        <div><p class="kicker">WHAT I FOCUS ON</p><h2>Engineering with purpose.</h2></div>
-        <p>I care about the quiet architecture behind useful products: clear APIs, dependable data, and systems that make sense.</p>
+        <div><p class="kicker">TECHNICAL SKILLS</p><h2 id="skills-title">Skills & Technologies</h2></div>
+        <p>A clear view of the backend technologies, data tools, and engineering practices I work with.</p>
       </div>
-      <div class="focus-grid">
-        <article class="focus-card reveal"><span class="card-number">01</span><div class="icon-box">{ }</div><h3>Backend Development</h3><p>Building structured server-side foundations with ASP.NET Core and practical engineering principles.</p><a href="about.html">Learn more <span>→</span></a></article>
-        <article class="focus-card featured reveal reveal-delay"><span class="card-number">02</span><div class="icon-box">↔</div><h3>RESTful APIs</h3><p>Connecting product experiences through clear, maintainable endpoints and thoughtful data flows.</p><a href="projects.html">See in context <span>→</span></a></article>
-        <article class="focus-card reveal reveal-delay-2"><span class="card-number">03</span><div class="icon-box">▱</div><h3>Data & Databases</h3><p>Designing relational data models that keep applications consistent, useful, and ready to grow.</p><a href="about.html">Learn more <span>→</span></a></article>
+      <div class="universe-shell skill-field reveal" data-skill-field aria-label="Interactive skills and technologies">
+        <canvas class="constellation-canvas" aria-hidden="true"></canvas>
+        <div class="universe-ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="skill-category-label" data-category-label="backend">BACKEND</div>
+        <div class="skill-category-label" data-category-label="data">DATA & DATABASES</div>
+        <div class="skill-category-label" data-category-label="engineering">ENGINEERING & TOOLS</div>
+
+        <button class="skill-orb" type="button" data-category="backend" data-tech-icon="csharp" data-tooltip="C#" aria-label="C#"></button>
+        <button class="skill-orb" type="button" data-category="backend" data-tech-icon="dotnet" data-tooltip="ASP.NET Core" aria-label="ASP.NET Core"></button>
+        <button class="skill-orb" type="button" data-category="backend" data-tech-icon="rest" data-tooltip="RESTful APIs" aria-label="RESTful APIs"></button>
+        <button class="skill-orb" type="button" data-category="backend" data-tech-icon="integration" data-tooltip="API Integration" aria-label="API Integration"></button>
+
+        <button class="skill-orb" type="button" data-category="data" data-tech-icon="sqlserver" data-tooltip="SQL Server" aria-label="SQL Server"></button>
+        <button class="skill-orb" type="button" data-category="data" data-tech-icon="efcore" data-tooltip="Entity Framework Core" aria-label="Entity Framework Core"></button>
+        <button class="skill-orb" type="button" data-category="data" data-tech-icon="database" data-tooltip="Database Design" aria-label="Database Design"></button>
+
+        <button class="skill-orb" type="button" data-category="engineering" data-tech-icon="github" data-tooltip="Git & GitHub" aria-label="Git and GitHub"></button>
+        <button class="skill-orb" type="button" data-category="engineering" data-tech-icon="analysis" data-tooltip="System Analysis" aria-label="System Analysis"></button>
+        <button class="skill-orb" type="button" data-category="engineering" data-tech-icon="docs" data-tooltip="Technical Documentation" aria-label="Technical Documentation"></button>
+        <button class="skill-orb" type="button" data-category="engineering" data-tech-icon="flutter" data-tooltip="Flutter Integration" aria-label="Flutter Integration"></button>
+
+        <div class="skill-field-message" aria-hidden="true"><span>MOVE POINTER INSIDE</span><strong>Skills organize into clear categories</strong></div>
       </div>
+      <p class="universe-hint reveal"><span aria-hidden="true">✦</span> Move your pointer into the field to organize the skills. Hover—or tap—a logo to see its name.</p>
     </section>
 
     <section class="section section-compact container reveal">
@@ -119,7 +113,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-main"><div><a class="brand" href="index.html"><span class="brand-mark">N</span><span>Nooraldeen Alnasarat</span></a><p>Software Engineering Graduate | Backend Developer</p></div><div class="footer-links"><a href="https://github.com/Nooraldeen2003" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/nooraldeen-alnasarat-7274792aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:nooraldeen.alnasarat03@gmail.com">Email</a></div></div>
+    <div class="container footer-main"><div><a class="brand" href="index.html"><span class="brand-mark">N</span><span>Nooraldeen Alnasarat</span></a><p>Software Engineer | Backend Developer</p></div><div class="footer-links"><a href="https://github.com/Nooraldeen2003" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/nooraldeen-alnasarat-7274792aa/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:nooraldeen.alnasarat03@gmail.com">Email</a></div></div>
     <div class="container footer-bottom"><span>© <span data-year></span> Nooraldeen Alnasarat</span><span>Designed with clarity. Built with purpose.</span></div>
   </footer>
 </body>

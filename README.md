@@ -20,7 +20,7 @@ A luxury, responsive, multi-page personal portfolio presenting Nooraldeen Alnasa
 - Modern CSS3
 - Vanilla JavaScript
 - Canvas-based ambient data network
-- Interactive zero-gravity technology constellation
+- Interactive skill-logo field that shifts from floating motion into clear technology categories
 - Accessible inline SVG brand icons
 - Cinematic motion, depth, and responsive microinteractions
 

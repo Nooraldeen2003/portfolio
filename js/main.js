@@ -106,6 +106,29 @@
   };
 
   document.querySelectorAll("[data-icon]").forEach(renderIcon);
+
+  const techIconPaths = {
+    csharp: '<path d="M32 4 55 17v30L32 60 9 47V17L32 4Z" fill="none" stroke="currentColor" stroke-width="3"/><text x="32" y="39" text-anchor="middle" fill="currentColor" font-size="19" font-weight="800" font-family="Arial,sans-serif">C#</text>',
+    dotnet: '<rect x="7" y="11" width="50" height="42" rx="10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="16" cy="42" r="2.5" fill="currentColor"/><text x="34" y="39" text-anchor="middle" fill="currentColor" font-size="15" font-weight="800" font-family="Arial,sans-serif">.NET</text>',
+    rest: '<path d="M8 22h34m0 0-8-8m8 8-8 8M56 42H22m0 0 8-8m-8 8 8 8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="22" r="4" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="55" cy="42" r="4" fill="none" stroke="currentColor" stroke-width="3"/>',
+    sqlserver: '<ellipse cx="32" cy="15" rx="20" ry="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 15v32c0 4.4 9 8 20 8s20-3.6 20-8V15M12 31c0 4.4 9 8 20 8s20-3.6 20-8" fill="none" stroke="currentColor" stroke-width="3"/><path d="m39 23 9-4-3 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>',
+    efcore: '<path d="M32 5 55 18v28L32 59 9 46V18L32 5Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 23h21M22 32h17M22 41h21" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="13" y="37" fill="currentColor" font-size="9" font-weight="800" font-family="Arial,sans-serif">EF</text>',
+    database: '<ellipse cx="32" cy="14" rx="21" ry="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M11 14v36c0 4.4 9.4 8 21 8s21-3.6 21-8V14M11 32c0 4.4 9.4 8 21 8s21-3.6 21-8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="44" cy="47" r="3" fill="currentColor"/>',
+    integration: '<circle cx="14" cy="32" r="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="15" r="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="49" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 29 43 18M21 35l22 11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>',
+    analysis: '<rect x="7" y="8" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><rect x="39" y="43" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="17" cy="49" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M25 14h14c6 0 11 5 11 11v12M39 49H25" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>',
+    docs: '<path d="M17 7h24l9 9v41H17V7Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M41 7v11h9M25 29h17M25 38h17M25 47h12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M10 15v42h30" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".55"/>',
+    flutter: '<path d="m37 5-27 27 9 9L55 5H37Zm0 27-13 13 9 9 9-9 13-13H37Zm-4 22 9-9 9 9-9 9-9-9Z" fill="currentColor" opacity=".95"/>'
+  };
+
+  const renderTechIcon = (element) => {
+    const name = element.dataset.techIcon;
+    if (name === "github") {
+      element.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${iconPaths.github}</svg>`;
+    } else if (techIconPaths[name]) {
+      element.innerHTML = `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">${techIconPaths[name]}</svg>`;
+    }
+  };
+  document.querySelectorAll("[data-tech-icon]").forEach(renderTechIcon);
   document.querySelectorAll('.footer-links a[href*="github.com"], .footer-links a[href*="linkedin.com"], .footer-links a[href^="mailto:"]').forEach((link) => {
     if (link.querySelector("[data-icon]")) return;
     const icon = document.createElement("i");
