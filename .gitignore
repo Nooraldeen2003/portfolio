@@ -8,3 +8,6 @@ NOORALDEEN_ALNASARAT_CV55.pdf
 Thumbs.db
 .vscode/
 .idea/
+
+# Nested local backup repository
+/portfiolo/
